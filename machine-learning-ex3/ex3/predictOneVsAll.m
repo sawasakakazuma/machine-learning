@@ -30,7 +30,9 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
-
+hTheta = sigmoid(X * all_theta');
+[M,I] = max(hTheta');
+p = I';
 
 
 
