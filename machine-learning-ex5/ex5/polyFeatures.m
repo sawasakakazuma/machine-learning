@@ -15,9 +15,13 @@ X_poly = zeros(numel(X), p);
 %
 % 
 
+tmpX = X*ones(1,p);
+X_poly = tmpX;
 
-
-
+for i=1:p
+    tmpX = horzcat(ones(numel(X),1), tmpX(:, 1:p-1));
+    X_poly = X_poly .* tmpX;
+end
 
 
 % =========================================================================
